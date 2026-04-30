@@ -3,65 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#E8F0FE">
+    <meta name="color-scheme" content="light">
     <title>Privacy Policy - Banban Chuti</title>
     <style>
+        :root {
+            --primary: #1976D2;
+            --primary-dark: #0d47a1;
+            --primary-soft: #E3F2FD;
+            --primary-border: rgba(25, 118, 210, 0.14);
+            --text: #263238;
+            --text-muted: #546E7A;
+            --surface: #ffffff;
+            --surface-elevated: #FAFBFC;
+            --line: #E0E7ED;
+            --radius-lg: 18px;
+            --radius-md: 10px;
+            --shadow-card: 0 4px 6px -1px rgba(25, 118, 210, 0.06), 0 22px 50px -12px rgba(25, 118, 210, 0.14);
+            --shadow-inner: inset 0 1px 0 rgba(255, 255, 255, 0.85);
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.75; color: #263238;
-            background: linear-gradient(135deg, #F5F9FF 0%, #E3F2FD 50%, #F5F9FF 100%);
-            padding: 20px; min-height: 100vh;
+            line-height: 1.78;
+            color: var(--text);
+            background-color: #eef4fc;
+            background-image:
+                radial-gradient(ellipse 120% 80% at 50% -20%, rgba(227, 242, 253, 0.9), transparent 55%),
+                linear-gradient(165deg, #f5f9ff 0%, #e8f1fc 42%, #f0f6ff 100%);
+            padding: max(20px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) max(28px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        .container { max-width: 720px; margin: 0 auto; background: white; border-radius: 16px;
-            box-shadow: 0 20px 60px rgba(25, 118, 210, 0.12); padding: 36px; border: 1px solid rgba(25, 118, 210, 0.1); }
-        h1 { color: #1976D2; font-size: 28px; margin-bottom: 8px; text-align: center; font-weight: 700; }
-        .app-name { text-align: center; color: #1976D2; font-size: 18px; margin-bottom: 8px; font-weight: 600; }
-        .update-date { text-align: center; color: #546E7A; font-size: 13px; margin-bottom: 24px; }
-        h2 { color: #1976D2; font-size: 20px; margin-top: 26px; margin-bottom: 12px; padding-bottom: 8px;
-            border-bottom: 2px solid #E0E7ED; font-weight: 600; }
-        p { margin-bottom: 12px; text-align: justify; color: #263238; }
-        ul { margin-left: 1.1em; margin-bottom: 12px; }
-        li { margin-bottom: 6px; color: #263238; }
-        .highlight { background: #E3F2FD; padding: 14px; border-radius: 8px; margin: 18px 0; border-left: 4px solid #1976D2; }
-        .contact { background: #FAFAFA; padding: 16px; border-radius: 8px; margin-top: 24px; border: 1px solid #E0E7ED; }
-        .footer { text-align: center; margin-top: 32px; padding-top: 16px; border-top: 1px solid #E0E7ED; color: #546E7A; font-size: 13px; }
-        strong { color: #1976D2; font-weight: 600; }
-        a { color: #1976D2; }
-        @media (max-width: 768px) { .container { padding: 20px; } h1 { font-size: 22px; } }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            background: var(--surface);
+            border-radius: var(--radius-lg);
+            padding: 40px 40px 36px;
+            border: 1px solid var(--primary-border);
+            box-shadow: var(--shadow-card), var(--shadow-inner);
+        }
+
+        .doc-header {
+            text-align: center;
+            padding-bottom: 22px;
+            margin-bottom: 4px;
+            position: relative;
+        }
+
+        .doc-header::after {
+            content: "";
+            display: block;
+            height: 3px;
+            width: 56px;
+            margin: 18px auto 0;
+            border-radius: 3px;
+            background: linear-gradient(90deg, transparent, var(--primary), transparent);
+            opacity: 0.55;
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: clamp(1.5rem, 4vw, 1.75rem);
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            margin-bottom: 10px;
+            text-wrap: balance;
+        }
+
+        .app-name {
+            color: var(--primary);
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            margin-bottom: 12px;
+        }
+
+        .update-date {
+            display: inline-block;
+            color: var(--text-muted);
+            font-size: 12px;
+            font-variant-numeric: tabular-nums;
+            padding: 5px 12px;
+            border-radius: 999px;
+            background: rgba(227, 242, 253, 0.65);
+            border: 1px solid rgba(25, 118, 210, 0.1);
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.14rem;
+            font-weight: 600;
+            margin-top: 28px;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--line);
+            letter-spacing: 0.02em;
+        }
+
+        h2:first-of-type {
+            margin-top: 22px;
+        }
+
+        p {
+            margin-bottom: 12px;
+            text-align: justify;
+            color: var(--text);
+            font-size: 15px;
+        }
+
+        ul {
+            margin: 0 0 14px 0;
+            padding-left: 1.35em;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: var(--text);
+            font-size: 15px;
+            padding-left: 0.15em;
+        }
+
+        li::marker {
+            color: #64B5F6;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, #E8F4FD 0%, #E3F2FD 50%, #eef6ff 100%);
+            padding: 18px 20px;
+            border-radius: var(--radius-md);
+            margin: 22px 0 8px;
+            border: 1px solid rgba(25, 118, 210, 0.12);
+            border-left: 4px solid var(--primary);
+            box-shadow: 0 1px 2px rgba(25, 118, 210, 0.05);
+        }
+
+        .highlight p {
+            margin-bottom: 0;
+            line-height: 1.82;
+        }
+
+        .contact {
+            background: var(--surface-elevated);
+            padding: 20px 22px 22px;
+            border-radius: var(--radius-md);
+            margin-top: 28px;
+            border: 1px solid var(--line);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        }
+
+        .contact h2 {
+            margin-top: 0;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            font-size: 1.05rem;
+            border-bottom-color: rgba(224, 231, 237, 0.9);
+        }
+
+        .contact p {
+            margin-bottom: 0;
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 36px;
+            padding-top: 22px;
+            border-top: 1px solid var(--line);
+            color: var(--text-muted);
+            font-size: 12px;
+            line-height: 1.65;
+        }
+
+        .footer p + p {
+            margin-top: 4px;
+        }
+
+        strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: rgba(25, 118, 210, 0.45);
+            transition: color 0.15s ease, text-decoration-color 0.15s ease;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration-color: rgba(13, 71, 161, 0.55);
+        }
+
+        a:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 3px;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 28px 22px 26px;
+                border-radius: 14px;
+            }
+            h1 { letter-spacing: 0.01em; }
+            p, li { font-size: 14px; }
+        }
+
+        @media print {
+            body {
+                background: #fff;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border: none;
+                border-radius: 0;
+                max-width: 100%;
+                padding: 0;
+            }
+            a {
+                color: #000;
+                text-decoration: underline;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Privacy Policy</h1>
-        <div class="app-name">Banban Chuti (斑斑出题)</div>
-        <div class="update-date">Last updated: April 30, 2026</div>
+        <header class="doc-header">
+            <h1>Privacy Policy</h1>
+            <div class="app-name">Banban Chuti (斑斑出题)</div>
+            <div class="update-date">Last updated: April 30, 2026</div>
+        </header>
 
         <div class="highlight">
-            <p><strong>Summary:</strong> Question and configuration data are stored mainly on your device. <strong>We (the developer) do not run user accounts, upload that data to our own servers, or collect or sell personally identifiable information for our own product</strong> (such as name, phone, or student ID). To help fund the app, we use <strong>Google AdMob</strong> for <strong>app open (full-screen) ads</strong>. Ad-related processing is described in <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google’s Privacy Policy</a> and related pages. Beyond that SDK, we <strong>do not</strong> embed our own in-app analytics/profiling SDKs.</p>
+            <p><strong>Summary:</strong> Worksheet and paper data (settings, preferences, local PDFs, etc.) stays <strong>on your device</strong> and is not uploaded to the developer’s servers. There is <strong>no</strong> sign-in account. The app uses <strong>Google AdMob</strong> for <strong>app open ads</strong> (usually requires network). We do <strong>not</strong> add other analytics, statistics, or crash-reporting SDKs.</p>
         </div>
 
-        <h2>1. Data we handle</h2>
-        <p>Banban Chuti generates and saves content on the device. <strong>We do not route that user content through a developer-run cloud sign-in</strong>. Locally stored items include: generation and paper settings, preferences, question parameters, local textbook options, print PDFs, and built-in templates. Content is used for app features; we do <strong>not</strong> upload it to <strong>our</strong> servers. Questions are mostly generated on the fly from parameters rather than being uploaded as a long-term “answer bank” by us.</p>
+        <h2>1. How we handle information</h2>
+        <ul>
+            <li><strong>Local data:</strong> paper and generation parameters, history, textbook/display options, exported PDFs—stored only on the device for app features.</li>
+            <li><strong>We do not collect:</strong> name, phone, student ID, or similar identifiers for our own use; no registration is required.</li>
+        </ul>
 
-        <h2>2. Advertising (Google AdMob)</h2>
-        <p>The app includes the <strong>Google Mobile Ads SDK</strong> and may show <strong>full-screen app open ads</strong> (e.g. on cold start or return from the background). Loading ads usually needs a <strong>network</strong>. Google may process technical data needed to serve ads, under Google’s terms. See <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Privacy Policy</a> and <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">How Google uses information</a> (URLs may be updated by Google).</p>
-        <p>We <strong>do not</strong> add our own company-wide in-app “analytics/tracking for profiling” product, social login, or developer-operated K–12 cloud account for your papers. You can limit ad-related or identifier options in iOS and Android system settings as applicable.</p>
+        <h2>2. Third parties (ads)</h2>
+        <p>The <strong>Google Mobile Ads SDK (AdMob)</strong> may show ads on launch and when returning from the background. Google may process device- and ad-related technical data under its policies: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>, <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Advertising &amp; Google</a>.</p>
+        <p><strong>iOS:</strong> Use <strong>Settings → Privacy &amp; Security</strong> to manage tracking, Apple Advertising, and related options (wording varies by iOS version).</p>
 
         <h2>3. Children</h2>
-        <p>Adults may use the app with children. We <strong>do not</strong> require children to <strong>register with us</strong> or <strong>submit</strong> name, phone, or contact to <strong>us</strong> for a developer account. App open ads are provided by Google; any technical data involved follows Google’s disclosures. Parents and guardians can use system privacy, ads, and tracking controls (wording and placement vary by OS version).</p>
+        <p>Core features do not require children to register with the developer or submit personal identifiers. Ads are served by Google; parents should use system parental controls and the settings above as appropriate.</p>
 
-        <h2>4. Security, permissions, and deletion</h2>
-        <p>Data stays in the app sandbox; uninstalling the app removes local data (back up PDFs you need). Storage, share, and print use standard OS features. We <strong>do not</strong> require location, camera, microphone, or contacts for the core product. <strong>Network and advertising identifiers</strong> may still be used by the OS, ads, or stores; limitations follow platform and Google/Apple rules.</p>
-        <p>You can delete in-app data or files as the app allows; deleting the app removes its sandbox data.</p>
+        <h2>4. Permissions, security, and deletion</h2>
+        <p>Core worksheet features do not require location, camera, microphone, or contacts. Saving or sharing PDFs may use system storage, share, or print. Uninstalling the app removes its sandbox data; back up PDFs you need first.</p>
 
-        <h2>5. Changes, law, and your rights</h2>
-        <p>We may update this policy in the app or on the page where it is published. <strong>Continued use</strong> after notice means you acknowledge the update, except where stricter consent is required. Where applicable, we follow laws on personal data and children’s privacy (e.g. relevant rules in China, the EU, and the U.S., subject to proper jurisdiction and conflict-of-law analysis).</p>
-        <p>You can access and remove local data on your device; other rights follow mandatory law in your region.</p>
+        <h2>5. Changes</h2>
+        <p>We will update the “last updated” date when this policy changes. Continued use means you acknowledge the update, except where stricter consent is required by law.</p>
 
         <div class="contact">
-            <h2>Contact</h2>
-            <p><strong>App</strong>: Banban Chuti (斑斑出题) ｜ <strong>Developer</strong>: 侯自强 ｜ <strong>Email</strong>: 568049509@qq.com</p>
-            <p>We will reply within a reasonable time.</p>
+            <h2>6. Contact</h2>
+            <p><strong>App</strong>: Banban Chuti (斑斑出题) ｜ <strong>Developer</strong>: 侯自强 ｜ <strong>Email</strong>: <a href="mailto:568049509@qq.com">568049509@qq.com</a></p>
         </div>
 
         <div class="footer">
