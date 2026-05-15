@@ -130,7 +130,7 @@
             <li>Contact information (email, phone number, address, etc.)</li>
             <li>Device identifiers or IP histories <strong>centralized on our servers</strong> for marketing or profiling (limited technical data visible to ad or network stacks is described in Section 4)</li>
             <li>Location information (GPS, geolocation, etc.)</li>
-            <li>Photos, videos, or other media files</li>
+            <li>Photos or videos from your camera or photo library <strong>uploaded to servers we control</strong> (we do not operate a feature that uploads your gallery or camera roll to our servers; optional replay export may create video files <strong>only on your device</strong> from in-game replay data; see Section 4.4)</li>
             <li>Contacts or address book information</li>
             <li>Usage statistics or analytics data</li>
             <li>Crash reports or diagnostic data</li>
@@ -144,6 +144,7 @@
             <li><strong>Game State:</strong> Saved incomplete games, game duration records</li>
             <li><strong>Dinosaur Collection:</strong> Unlocked dinosaur records</li>
             <li><strong>Premium status:</strong> A local flag indicating whether subscription benefits are active (e.g., ad removal); it may update via the system store; <strong>we do not operate a separate login account to host this state</strong></li>
+            <li><strong>Optional replay / export-related data (if you use these features):</strong> Data used to record or export a gameplay replay is processed and stored <strong>locally on your device</strong>; <strong>we do not upload it to servers we control</strong> unless <strong>you</strong> choose to share an exported file through the system share sheet or similar OS-provided flows</li>
         </ul>
         <p>This data is used on-device for app functionality. Aside from store and ad flows handled by Apple / Google, <strong>we do not maintain a centralized cloud database of this content on servers we control</strong>.</p>
 
@@ -195,6 +196,15 @@
         <h3>4.3 Other Third-Party Services</h3>
         <p>Beyond <strong>Google AdMob</strong> and the <strong>Apple App Store</strong> as described above, Dinos Sudoku <strong>does not use</strong> other third-party services for our own account system, social login, proprietary cloud saves, or cross-app user profiling. The subscription screen may link to this Privacy Policy, Terms of Use, or support pages, which open in the <strong>system browser</strong> for caregivers to review.</p>
 
+        <h3>4.4 On-Device Media Processing (Optional Replay Video Export)</h3>
+        <p>If you use optional features that <strong>export a replay as a video file</strong>, the app uses a <strong>bundled open-source media toolkit (FFmpeg-based components)</strong> to encode video <strong>on your device</strong>. In that case:</p>
+        <ul>
+            <li>Processing happens <strong>locally</strong>; we do <strong>not</strong> send your replay files to servers we control for encoding</li>
+            <li>Exported files may be <strong>saved on your device</strong> or passed to apps you pick via the <strong>system share sheet</strong>; any upload after that is governed by the destination app or service you choose</li>
+            <li>Sudoku gameplay itself <strong>does not use your camera</strong> to capture photos or videos, and we <strong>do not use your camera</strong> to collect media for advertising</li>
+            <li>Because the bundled media libraries include low-level device interfaces linked in the app binary, <strong>Apple may require an <code>NSCameraUsageDescription</code> string in the app’s Info.plist</strong> even when the app does not present a camera feature; this is a <strong>platform disclosure requirement</strong> and does not mean we access your camera for profiling or ad targeting</li>
+        </ul>
+
         <h2>5. Children's Privacy Protection (COPPA Compliant)</h2>
         <p>Dinos Sudoku is designed specifically for children. We follow the <strong>Children's Online Privacy Protection Act (COPPA)</strong> and related child-friendly practices:</p>
         <ul>
@@ -231,20 +241,21 @@
         <ul>
             <li>📡 <strong>Network access:</strong> Used to load ads, complete in-app purchases and store sync, and in some cases to open support or policy pages; core Sudoku can be played offline, but ads, subscriptions, and some online content require a network</li>
             <li>✅ No location permission required</li>
-            <li>✅ No camera permission required</li>
+            <li>📷 <strong>Camera (iOS disclosure):</strong> Core gameplay <strong>does not use your camera</strong>. The App Store build may still include an <strong>NSCameraUsageDescription</strong> entry because bundled media components used for <strong>optional replay video export</strong> link to system camera-related APIs at the binary level; <strong>we do not use your camera to collect photos or videos for advertising</strong>. You are not asked to grant camera access for normal Sudoku play.</li>
             <li>✅ No microphone permission required</li>
             <li>✅ No contacts permission required</li>
-            <li>✅ No photos permission required</li>
+            <li>✅ No photo library access required for core gameplay (optional export/share flows use the system share sheet; we do not upload your gallery to our servers)</li>
             <li>✅ No calendar permission required</li>
             <li>✅ No device ID or advertising ID required (disabled in child-directed mode)</li>
         </ul>
-        <p>The app only uses basic device features (audio playback, local storage, network for ad loading) to provide the gaming experience.</p>
+        <p>The app uses basic device features (audio playback, local storage, optional on-device export, network for ads and store flows) to provide the gaming experience.</p>
         
         <h3>7.1 iOS-Specific Permissions</h3>
-        <p>On iOS devices, you may see the following permission requests:</p>
+        <p>On iOS devices, you may see the following permission requests or Info.plist disclosures:</p>
         <ul>
             <li><strong>App Tracking Transparency (ATT):</strong> We do not track you; this permission is only for iOS compliance. The app works normally even if you deny this permission, and privacy protection is not affected.</li>
-            <li><strong>Local Network:</strong> Only used for development debugging; we do not access your local network devices.</li>
+            <li><strong>Local Network:</strong> As described in the system prompt, local network access is used for <strong>playing local audio</strong> and for <strong>optional development tooling</strong>; the app is not intended to browse or control other devices on your network.</li>
+            <li><strong>Camera usage description (Info.plist):</strong> Explains why a camera-related string may appear in the app bundle for App Store validation; see Section 4.4. It does <strong>not</strong> mean we operate a camera-based feature for ads or child profiling.</li>
         </ul>
 
         <h2>8. Data Deletion</h2>
@@ -299,6 +310,7 @@
                 <li>✅ Using child-directed, non-personalized ad configurations</li>
                 <li>✅ Offering optional Premium through Apple's official in-app purchase flow, with terms governed by Apple and the in-app subscription screen</li>
                 <li>✅ Updating this policy as product features evolve</li>
+                <li>✅ Describing optional replay export and on-device media processing honestly, including why an iOS camera usage description may be present without a user-facing camera feature</li>
             </ul>
             <p><strong>Dinos Sudoku aims to explain data practices clearly and proportionately while providing educational entertainment.</strong></p>
         </div>
