@@ -123,42 +123,52 @@
     <div class="container">
         <h1>✍️ Privacy Policy</h1>
         <div class="app-name">Banban Bishun (斑斑笔顺)</div>
-        <div class="update-date">Last Updated: May 18, 2026</div>
+        <div class="update-date">Last Updated: September 2, 2026</div>
 
         <div class="highlight">
-            <p><strong>Summary:</strong> Learning data (practice progress, stroke-order and handwriting records, textbook preferences, local PDFs, etc.) is stored <strong>on your device only</strong> and is not uploaded to our servers; no account is required. We integrate <strong>Google AdMob</strong> to show <strong>app open (splash) ads</strong> (usually requires a network connection). We do not provide your practice or learning content to advertising providers. We do not integrate other analytics, statistics, or crash-reporting SDKs.</p>
+            <p><strong>Summary:</strong> Learning data (practice progress, stroke-order and handwriting records, textbook preferences, local PDFs, etc.) is stored <strong>on your device only</strong> and is not uploaded to our servers; no account is required. The app uses a Freemium model: a <strong>30-day full experience</strong> starts automatically on first visit to the home screen (no payment method required), with trial markers stored in the device Keychain; after it ends, core learning remains free. Printing, exam generation, and daily practice are subject to usage quotas; when quotas are used up, you may <strong>optionally</strong> watch rewarded videos for extra uses or subscribe to Premium. Membership is purchased and restored via the <strong>Apple App Store</strong> (monthly / yearly / lifetime); payments are handled by Apple—we do not collect card details. <strong>No app open (splash) ads</strong> are shown; <strong>Google AdMob</strong> rewarded videos appear only when you actively choose “watch ad for quota” (usually requires a network connection). We do not provide your practice or learning content to advertising providers. We do not integrate other analytics, statistics, or crash-reporting SDKs.</p>
         </div>
 
         <h2>1. How We Handle Your Information</h2>
         <ul>
-            <li><strong>Local data:</strong> Practice progress, character practice and error statistics, language and display preferences, handwriting and stroke-order records, PDFs for printing, and similar data stay on your device for app functionality.</li>
-            <li><strong>We do not actively collect:</strong> Identity information such as name, phone number, or student ID; registration is not required.</li>
+            <li><strong>Local learning data:</strong> Practice progress, character practice and error statistics, language and display preferences, handwriting and stroke-order records, PDFs for printing, and similar data stay on your device for app functionality.</li>
+            <li><strong>Trial and quotas:</strong> Whether a 30-day full experience has been granted and when it started are stored in the device Keychain (not synced to iCloud Keychain, not uploaded to our servers). Monthly / daily quota counters for printing, exams, and daily practice are stored locally (e.g., SharedPreferences).</li>
+            <li><strong>Membership status:</strong> Whether you have an active subscription or lifetime purchase is verified and cached on device using purchase / subscription information from Apple.</li>
+            <li><strong>We do not actively collect:</strong> Identity information such as name, phone number, or student ID; registration or login is not required.</li>
         </ul>
-        <p>“We do not collect” above means the <strong>app developer</strong> does not actively collect, store, or transmit that information for learning features. Technical data related to ad delivery may be processed by Google as described in Section 2.</p>
+        <p>“We do not collect” above means the <strong>app developer</strong> does not actively collect, store, or transmit that identity information for learning features. Technical data related to advertising and App Store purchases may be processed by third parties such as Google and Apple as described in Sections 2 and 3.</p>
 
-        <h2>2. Third Parties (Advertising)</h2>
-        <p>We use the <strong>Google Mobile Ads SDK (AdMob)</strong> to show <strong>app open ads</strong>, typically when entering the home screen after onboarding on cold start, or when returning to the app from the background after it has been away for an extended period. App open ads are not shown before first-time onboarding is completed. If an ad fails to load or times out, the app continues to the next screen without blocking use.</p>
+        <h2>2. In-App Purchases and Trial</h2>
+        <p>Premium products (auto-renewable monthly and yearly subscriptions, and a one-time lifetime purchase) are completed through <strong>Apple App Store In-App Purchase (StoreKit)</strong>. Payment, receipts, subscription renewal, and cancellation are handled by Apple; we do not receive or store your payment card number, Apple ID password, or similar sensitive payment information.</p>
+        <p>After you first reach the home screen, the app <strong>silently starts</strong> a 30-day full experience (no payment method required, no separate “Start trial” tap). During the trial, all features and quotas are unlimited. When the trial ends, you move to the free tier with no automatic charge.</p>
+        <p>You can manage subscriptions (including turning off auto-renewal) in your App Store account settings. The app provides “Restore Purchases” to recover membership on the same Apple ID after reinstalling or changing devices. A <strong>parent gate</strong> (simple math verification) is required before initiating a purchase.</p>
+        <p>See also: <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple Privacy Policy</a>, <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" target="_blank" rel="noopener">Apple Media Services Terms (Standard EULA)</a>.</p>
+
+        <h2>3. Third Parties (Advertising)</h2>
+        <p>This app does <strong>not</strong> show app open (splash) ads and does not automatically insert ads during learning, dictation, practice, cold start, or return from background.</p>
+        <p>When free-tier users <strong>actively choose</strong> to “watch a rewarded video for extra printing / exam / daily practice uses,” we show a <strong>rewarded video ad</strong> through the <strong>Google Mobile Ads SDK (AdMob)</strong>. If an ad fails to load or times out, core learning features are not blocked.</p>
         <p>Google and its advertising partners may process data related to ad display and interaction (such as device identifiers, network information, and ad engagement) under their privacy policies. We do not provide your stroke-order, practice, or textbook content to advertising providers. See: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google Privacy Policy</a>, <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener">Ads and data</a>, <a href="https://support.google.com/admob/answer/6128543" target="_blank" rel="noopener">AdMob program policies</a>.</p>
-        <p>The app is configured for child-directed treatment and limits ad content maturity to <strong>G (general audiences)</strong>, consistent with AdMob SDK settings.</p>
-        <p><strong>iOS:</strong> You can manage tracking, Apple Advertising, and related options in Settings → Privacy &amp; Security (wording may vary by iOS version). App open ads usually require a network connection; core stroke-order and practice features work offline on device.</p>
+        <p>The app is configured for child-directed treatment and limits ad content maturity to <strong>G (general audiences)</strong>, consistent with AdMob SDK settings. Watching rewarded videos for quota <strong>does not</strong> go through the parent gate; the UI advises guardians that children may watch on their own.</p>
+        <p><strong>iOS:</strong> You can manage tracking, Apple Advertising, and related options in Settings → Privacy &amp; Security (wording may vary by iOS version). Rewarded videos usually require a network connection; core stroke-order and practice features work offline on device.</p>
 
-        <h2>3. Children</h2>
-        <p>Core features do not require children to register with us or submit identity information to the developer. Ads are provided by Google; parents and guardians should manage use with system parental controls and the settings described above.</p>
+        <h2>4. Children</h2>
+        <p>Core features do not require children to register with us or submit identity information to the developer. Membership purchases require parent verification; rewarded videos are user-initiated on quota screens—parents and guardians should manage use with system parental controls and the settings described above.</p>
 
-        <h2>4. Permissions, Security, and Deletion</h2>
-        <p>Core stroke-order and practice features do not require location, camera, microphone, or contacts. Saving or sharing PDFs and playing pronunciations may use system storage, sharing, or audio capabilities. Uninstalling the app removes data in the app sandbox; back up important PDFs first.</p>
+        <h2>5. Permissions, Security, and Deletion</h2>
+        <p>Core stroke-order and practice features do not require location, camera, microphone, or contacts. Saving or sharing PDFs and playing pronunciations may use system storage, sharing, or audio capabilities. Uninstalling the app removes data in the app sandbox (trial markers in Keychain may persist per iOS behavior; reinstall may continue the existing trial period); back up important PDFs first.</p>
 
-        <h2>5. Policy Updates</h2>
+        <h2>6. Policy Updates</h2>
         <p>We will revise the date on this page when we update this policy. Continued use means you acknowledge the update, except where separate consent is required by law.</p>
 
         <div class="contact">
-            <h2>6. Contact Us</h2>
+            <h2>7. Contact Us</h2>
             <p><strong>App:</strong> Banban Bishun (斑斑笔顺) ｜ <strong>Developer:</strong> 侯自强 ｜ <strong>Email:</strong> <a href="mailto:568049509@qq.com">568049509@qq.com</a></p>
+            <p style="margin-top: 10px;"><strong>Membership &amp; Support:</strong> <a href="https://www.xiaohetime.com/xiaohetime/banbanbishun/support?lang=en" target="_blank" rel="noopener">Banban Bishun Support</a></p>
         </div>
 
         <div class="footer">
             <p>© 2026 侯自强. All rights reserved.</p>
-            <p>Banban Bishun (斑斑笔顺) v1.0.8+13</p>
+            <p>Banban Bishun (斑斑笔顺) v1.1.1+18</p>
         </div>
     </div>
 </body>
